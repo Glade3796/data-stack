@@ -131,12 +131,14 @@ async function getEntries() {
     //accessing local data ("if statements" to circumvent empty field)
     let likeData = JSON.parse(localStorage.getItem("likes"));
     console.log();
-    for (let index = 0; index < likeData.length; index++) {
-      if (entry.id == likeData[index].id) {
-        const likedPost = `\u2665${h3.textContent}\u2665`;
-        console.log("liked", entry.id);
-        h3.setAttribute("liked", true);
-        h3.textContent = likedPost;
+    if (likeData != null || undefined) {
+      for (let index = 0; index < likeData.length; index++) {
+        if (entry.id == likeData[index].id) {
+          const likedPost = `\u2665${h3.textContent}\u2665`;
+          console.log("liked", entry.id);
+          h3.setAttribute("liked", true);
+          h3.textContent = likedPost;
+        }
       }
     }
     // ############## delete button function ########################
