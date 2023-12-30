@@ -8,7 +8,7 @@ form.addEventListener("submit", async function (event) {
   const formData = new FormData(form);
   const formVal = Object.fromEntries(formData);
   //posting to place.db:
-  const res = await fetch("http://localhost:3333/place", {
+  const res = await fetch("https://the-place-server.onrender.com/place", {
     method: "POST",
     headers: { "content-type": "application/json" },
     body: JSON.stringify(formVal),
@@ -26,7 +26,7 @@ form.addEventListener("submit", async function (event) {
 //############################
 async function getEntries() {
   //fetching database info
-  const res = await fetch("http://localhost:3333/place");
+  const res = await fetch("https://the-place-server.onrender.com/place");
   const entry = await res.json();
   entry.reverse();
   //creation of each element
@@ -85,11 +85,14 @@ async function getEntries() {
             likes: newLikes,
           };
           //send above object via POST route to 3333/likes
-          const res = await fetch("http://localhost:3333/likes", {
-            method: "POST",
-            headers: { "content-type": "application/json" },
-            body: JSON.stringify(newEnt),
-          });
+          const res = await fetch(
+            "https://the-place-server.onrender.com/likes",
+            {
+              method: "POST",
+              headers: { "content-type": "application/json" },
+              body: JSON.stringify(newEnt),
+            }
+          );
           //console logging
           const json = await res.json();
           console.log(json);
@@ -145,7 +148,7 @@ async function getEntries() {
         id: entry.id,
       };
       //send to 3333/del
-      const res = await fetch("http://localhost:3333/del", {
+      const res = await fetch("https://the-place-server.onrender.com/del", {
         method: "POST",
         headers: { "content-type": "application/json" },
         body: JSON.stringify(delEntry),

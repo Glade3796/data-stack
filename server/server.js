@@ -64,5 +64,5 @@ WHERE id = ?`
 });
 
 app.listen(3333, () => {
-  console.log("Server up ---port:3333");
+  console.log("server up on https://the-place-server.onrender.com/");
 });
