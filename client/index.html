@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Place</title>
+    <script src="app.js" defer type="module"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <label for="deleteCheck">
+      <input id="deleteCheck" type="checkbox" />
+      toggle delete
+    </label>
+    <h1>Welcome to the <br />Place</h1>
+    <h3>fill in dis -></h3>
+    <form id="form" class="grid">
+      <label for="user_name">Name:</label>
+      <div name="user_name">
+        <input
+          type="text"
+          name="user_fname"
+          id="userFName"
+          placeholder="first name"
+        /><input
+          type="text"
+          name="user_sname"
+          id="userSName"
+          placeholder="second name"
+        />
+      </div>
+      <label for="user_message">Leave a meaningful message:</label>
+      <input
+        type="text"
+        name="user_message"
+        id="userMessage"
+        maxlength="45"
+        placeholder="It's now who you are, but what you do"
+      />
+      <label for="user_colour">Pick your colour:</label>
+      <input type="color" name="user_colour" id="userColour" value="#ff0000" />
+      <fieldset>
+        <legend>Message sentiment:</legend>
+        <input
+          type="radio"
+          id="hopeful"
+          name="sentiment"
+          value="hopeful"
+          checked
+        />
+        <label for="hopeful">Hopeful</label>
+
+        <input type="radio" id="loving" name="sentiment" value="loving" />
+        <label for="loving">Loving</label><br />
+
+        <input type="radio" id="kind" name="sentiment" value="kind" />
+        <label for="kind">Kind</label>
+
+        <input type="radio" id="inspiring" name="sentiment" value="inspiring" />
+        <label for="inspiring">Inspiring</label>
+      </fieldset>
+      <button type="submit">Submit</button>
+    </form>
+    <div id="container"></div>
+  </body>
+</html>
